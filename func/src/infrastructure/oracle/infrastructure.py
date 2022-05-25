@@ -4,7 +4,6 @@ from src.infrastructure.env_config import Configuration
 
 
 class OracleInfrastructure:
-
     @classmethod
     def get_connection(cls) -> cx_Oracle.Cursor:
         connection = cls._make_connection()

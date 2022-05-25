@@ -25,7 +25,9 @@ class EnumRepository(IEnumRepository):
 
     @classmethod
     def _get_cached_enum(cls, query: str, country: str) -> List[Tuple]:
-        if cached_enum := cls.cache_database.get_from_cache(cls.enum_key.format(country)):
+        if cached_enum := cls.cache_database.get_from_cache(
+            cls.enum_key.format(country)
+        ):
             return cached_enum
 
         query = query.format(country)

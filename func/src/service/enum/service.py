@@ -19,7 +19,7 @@ class EnumService(IEnumService):
                 success=False,
                 code=StatusCode.INVALID_PARAMS,
                 message="Bad request. Incorrect or invalid parameters.",
-                result=service_response
+                result=service_response,
             )
             return service_response
 
@@ -27,36 +27,30 @@ class EnumService(IEnumService):
 
         try:
             for code, value in enums:
-                service_response.append(
-                    {
-                        "code": code,
-                        "value": value
-                    }
-                )
+                service_response.append({"code": code, "value": value})
         except TypeError:
-            Gladsheim.error(error=TypeError(), message='Data not found or inconsistent.')
+            Gladsheim.error(
+                error=TypeError(), message="Data not found or inconsistent."
+            )
             service_response = ResponseModel.build_response(
                 success=False,
                 code=StatusCode.DATA_NOT_FOUND,
-                message='Data not found or inconsistent.',
-                result=[]
+                message="Data not found or inconsistent.",
+                result=[],
             )
             return service_response
 
         except Exception as error:
-            Gladsheim.error(error=error, message='Error trying to get the enum.')
+            Gladsheim.error(error=error, message="Error trying to get the enum.")
             service_response = ResponseModel.build_response(
                 success=False,
                 code=StatusCode.DATA_NOT_FOUND,
-                message='Error trying to get the enum.',
-                result=[]
+                message="Error trying to get the enum.",
+                result=[],
             )
             return service_response
 
         service_response = ResponseModel.build_response(
-            success=True,
-            code=StatusCode.SUCCESS,
-            message=None,
-            result=service_response
+            success=True, code=StatusCode.SUCCESS, message=None, result=service_response
         )
         return service_response
