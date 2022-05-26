@@ -1,14 +1,14 @@
 include:
 - ./func/*
 kind: ArchiveUploadSpec
-name: func-d5sT
+name: func-IM9b
 
 ---
 apiVersion: fission.io/v1
 kind: Package
 metadata:
   creationTimestamp: null
-  name: fn-get-state-a6e26ef5-6462-438b-9c70-a25d5aa96212
+  name: fn-get-state-718050a8-1645-4c8a-b2bf-954b0ba7b469
   namespace: default
 spec:
   deployment:
@@ -19,10 +19,10 @@ spec:
   source:
     checksum: {}
     type: url
-    url: archive://func-d5sT
+    url: archive://func-IM9b
 status:
   buildstatus: pending
-  lastUpdateTimestamp: "2022-05-23T17:55:32Z"
+  lastUpdateTimestamp: "2022-05-26T16:32:15Z"
 
 ---
 apiVersion: fission.io/v1
@@ -49,7 +49,7 @@ spec:
   package:
     functionName: main.get_enums
     packageref:
-      name: fn-get-state-a6e26ef5-6462-438b-9c70-a25d5aa96212
+      name: fn-get-state-718050a8-1645-4c8a-b2bf-954b0ba7b469
       namespace: default
   requestsPerPod: 1
   resources: {}

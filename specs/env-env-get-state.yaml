@@ -7,13 +7,13 @@ metadata:
 spec:
   builder:
     command: build
-    image: nexus.sigame.com.br/fission-cx-builder-3.8:0.0.1
+    image: nexus.sigame.com.br/fission-cx-builder-3.8:0.0.3
   imagepullsecret: ""
   keeparchive: false
   poolsize: 3
   resources: {}
   runtime:
-    image: nexus.sigame.com.br/fission-cx-env-3.8:0.0.1
+    image: nexus.sigame.com.br/fission-cx-env-3.8:0.0.3
     podspec:
       containers:
       - name: env-get-state
@@ -38,5 +38,4 @@ spec:
           value: "1521"
         - name: LD_LIBRARY_PATH
           value: "/opt/instantclient"
-
   version: 2

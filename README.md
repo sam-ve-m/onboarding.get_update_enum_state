@@ -17,8 +17,8 @@ Or in the Confluence installation tutorial:
 Run these commands in the terminal:
 ```bash
 docker login -u [USER] -p [PASSWORD] nexus.sigame.com.br
-docker pull nexus.sigame.com.br/python-env-3.8:0.0.5
-docker pull nexus.sigame.com.br/python-builder-3.8:0.0.2
+docker pull nexus.sigame.com.br/fission-cx-env-3.8:0.0.3
+docker pull nexus.sigame.com.br/fission-cx-builder-3.8:0.0.3
 ```
 
 Make sure the images are installed:

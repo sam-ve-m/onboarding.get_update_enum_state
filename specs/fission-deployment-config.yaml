@@ -4,4 +4,4 @@
 apiVersion: fission.io/v1
 kind: DeploymentConfig
 name: onboarding-get-update-enum-state
-uid: 949e6e94-ebbf-4d4c-9c82-5f817b9df5ec
+uid: af5c89d0-4732-4203-b613-6c50db02f8ab
