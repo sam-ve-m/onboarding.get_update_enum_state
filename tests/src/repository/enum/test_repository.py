@@ -1,5 +1,5 @@
 from src.repository.enum.repository import EnumRepository
-from src.repository.base_repository.cache.repository import CacheRepository
+from src.repository.cache.repository import CacheRepository
 from src.repository.base_repository.oracle.repository import OracleBaseRepository
 from tests.test_doubles.doubles import (
     enum_repository_get_cached_enum_dummy,

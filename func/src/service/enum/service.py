@@ -2,6 +2,7 @@ from etria_logger import Gladsheim
 from flask import Request
 
 from src.core.interfaces.service.enum.interface import IEnumService
+from src.core.validator.validator import StateParams
 from src.repository.enum.repository import EnumRepository
 from src.core.response_model.response_model import ResponseModel
 from src.core.status_codes.code_enums import StatusCode
@@ -9,23 +10,12 @@ from src.core.status_codes.code_enums import StatusCode
 
 class EnumService(IEnumService):
     @classmethod
-    def get_response(cls, request: Request):
+    def get_response(cls, request: StateParams):
         service_response = []
-
-        country = request.args.get("country")
-        there_are_parameters = bool(country)
-        if not there_are_parameters:
-            service_response = ResponseModel.build_response(
-                success=False,
-                code=StatusCode.INVALID_PARAMS,
-                message="Bad request. Incorrect or invalid parameters.",
-                result=service_response,
-            )
-            return service_response
-
-        enums = EnumRepository.get_enums(country)
+        country = request.country.value
 
         try:
+            enums = EnumRepository.get_enums(country)
             for code, value in enums:
                 service_response.append({"code": code, "value": value})
         except TypeError:

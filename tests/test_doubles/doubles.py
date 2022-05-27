@@ -1,7 +1,9 @@
 # Doubles of: main
 
-main_service_response_dummy = '{"result": [{"code": 1, "value": "BRASILEIRO NATO"}, {"code": 2, "value": "BRASILEIRO NATURALIZADO"}, {"code": 3, "value": "ESTRANGEIRO"}], "message": null, "success": true, "code": 0}'
+main_service_response_dummy = '{"result": [{"code": 1, "value": "Enum1"}, {"code": 2, "value": "Enum2"}, {"code": 3, "value": "Enum3"}], "message": null, "success": true, "code": 0}'
 main_response_dummy = main_service_response_dummy.encode()
+main_service_response_when_invalid_params_dummy = '{"result": [], "message": "Bad request. Incorrect or invalid parameters.", "success": false, "code": 10}'
+main_response_when_invalid_params_dummy = (main_service_response_when_invalid_params_dummy.encode())
 
 # Doubles of: src.service.enum.service
 

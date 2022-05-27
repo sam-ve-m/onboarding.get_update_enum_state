@@ -1,7 +1,7 @@
 from typing import List, Tuple
 
 from src.core.interfaces.repository.enum.interface import IEnumRepository
-from src.repository.base_repository.cache.repository import CacheRepository
+from src.repository.cache.repository import CacheRepository
 from src.repository.base_repository.oracle.repository import OracleBaseRepository
 
 
@@ -15,7 +15,7 @@ class EnumRepository(IEnumRepository):
             FROM CORRWIN.TSCESTADO
             WHERE SG_PAIS='{}'
         """
-    enum_key = "EnumState{}"
+    enum_key = "jormungandr: EnumState{}"
 
     @classmethod
     def get_enums(cls, country: str) -> List[Tuple]:

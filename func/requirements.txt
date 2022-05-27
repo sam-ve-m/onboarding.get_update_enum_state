@@ -4,3 +4,4 @@ Flask==2.1.2
 cx-Oracle==8.3.0
 mnemosine==0.1.1
 python-dotenv==0.20.0
+pydantic==1.9.1
