@@ -1,5 +1,4 @@
 from etria_logger import Gladsheim
-from flask import Request
 
 from src.core.interfaces.service.enum.interface import IEnumService
 from src.core.validator.validator import StateParams

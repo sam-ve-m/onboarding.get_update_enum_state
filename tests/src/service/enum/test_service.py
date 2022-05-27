@@ -20,9 +20,6 @@ from tests.test_doubles.doubles import (
 @patch.object(EnumRepository, "get_enums")
 def test_get_response_when_enums_are_ok(get_enums_mock):
     get_enums_mock.return_value = enum_service_get_enums_response_ok
-    # app = Flask(__name__)
-    # with app.test_request_context("?country=USA").request as request:
-
     result = EnumService.get_response(StateParams(country="USA"))
     assert result == enum_service_response_ok
     get_enums_mock.assert_called_with("USA")
