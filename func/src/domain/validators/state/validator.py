@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from src.core.validator.country_enum import Country
+from src.core.validator.state.enum.country.enum import Country
 
 
 class StateParams(BaseModel):

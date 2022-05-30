@@ -6,8 +6,8 @@ import cx_Oracle
 from etria_logger import Gladsheim
 
 # SOURCE CODE
-from src.core.exceptions.exceptions import InternalServerError
 from src.core.interfaces.repository.oracle.interface import IOracle
+from src.domain.exceptions.model import InternalServerError
 from src.infrastructure.oracle.infrastructure import OracleInfrastructure
 
 
