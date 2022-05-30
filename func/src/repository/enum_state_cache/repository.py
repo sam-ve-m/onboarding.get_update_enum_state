@@ -9,7 +9,7 @@ from src.core.interfaces.repository.enum_state_cache.interface import (
 
 
 class EnumStateCacheRepository(IEnumStateCacheRepository):
-    enum_key = "jormungandr: EnumState{}"
+    enum_key = "jormungandr:EnumState:{}"
 
     @classmethod
     def save_enum_state(cls, enum_state: list, country: str, time: int = 3600) -> bool:
