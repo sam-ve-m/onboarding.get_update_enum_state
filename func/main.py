@@ -27,6 +27,19 @@ def get_enums(request_: Request = request) -> Response:
         )
         return response
 
+    except ValueError:
+        Gladsheim.error(error=TypeError(), message="Bad request. Incorrect or invalid parameters.")
+        response = ResponseModel.build_http_response(
+            response_model=ResponseModel.build_response(
+                success=False,
+                code=StatusCode.INVALID_PARAMS,
+                message="Bad request. Incorrect or invalid parameters.",
+                result=[],
+            ),
+            status=HTTPStatus.BAD_REQUEST,
+        )
+        return response
+
     except TypeError:
         Gladsheim.error(error=TypeError(), message="Data not found or inconsistent.")
         response = ResponseModel.build_http_response(
