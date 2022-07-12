@@ -1,0 +1,55 @@
+include:
+- ./func/*
+kind: ArchiveUploadSpec
+name: func-IM9b
+
+---
+apiVersion: fission.io/v1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: fn-get-state-718050a8-1645-4c8a-b2bf-954b0ba7b469
+  namespace: default
+spec:
+  deployment:
+    checksum: {}
+  environment:
+    name: env-get-state
+    namespace: default
+  source:
+    checksum: {}
+    type: url
+    url: archive://func-IM9b
+status:
+  buildstatus: pending
+  lastUpdateTimestamp: "2022-05-26T16:32:15Z"
+
+---
+apiVersion: fission.io/v1
+kind: Function
+metadata:
+  creationTimestamp: null
+  name: fn-get-state
+  namespace: default
+spec:
+  InvokeStrategy:
+    ExecutionStrategy:
+      ExecutorType: newdeploy
+      MaxScale: 1
+      MinScale: 1
+      SpecializationTimeout: 120
+      TargetCPUPercent: 80
+    StrategyType: execution
+  concurrency: 500
+  environment:
+    name: env-get-state
+    namespace: default
+  functionTimeout: 60
+  idletimeout: 120
+  package:
+    functionName: main.get_enums
+    packageref:
+      name: fn-get-state-718050a8-1645-4c8a-b2bf-954b0ba7b469
+      namespace: default
+  requestsPerPod: 1
+  resources: {}
