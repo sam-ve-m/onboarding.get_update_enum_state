@@ -51,5 +51,5 @@ spec:
     packageref:
       name: fn-get-state-718050a8-1645-4c8a-b2bf-954b0ba7b469
       namespace: default
-  requestsPerPod: 1
+  requestsPerPod: 10000
   resources: {}
