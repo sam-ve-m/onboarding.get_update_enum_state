@@ -11,6 +11,7 @@ from tests.test_doubles.doubles import (
     enum_service_response_invalid,
     enum_service_get_enums_response_ok,
     enum_service_response_ok,
+    enum_service_response_bad_request,
 )
 
 service_response_dummy = main_service_response_dummy
@@ -41,3 +42,12 @@ def test_get_response_when_enums_are_invalid(get_enums_mock):
     with app.test_request_context("?country=BRA").request as request:
         response = get_enums(request_=request)
         assert response.data == enum_service_response_invalid.encode()
+
+
+@patch.object(StateEnumRepository, "get_state_enum")
+def test_get_response_when_bad_parameters(get_enums_mock):
+    get_enums_mock.side_effect = ValueError("Bad Parameters")
+    app = Flask(__name__)
+    with app.test_request_context("?country=BRA").request as request:
+        response = get_enums(request_=request)
+        assert response.data == enum_service_response_bad_request.encode()
