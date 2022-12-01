@@ -23,18 +23,8 @@ spec:
           value: "INFO"
         - name: ETRIA_LOG_LEVEL
           value: "INFO"
-        - name: ORACLE_BASE_DSN
-          value: "172.30.10.227"
-        - name: ORACLE_USER
-          value: "corrwin"
-        - name: ORACLE_PASSWORD
-          value: "5VUn2yD5"
-        - name: ORACLE_SERVICE
-          value: "OPDBDEV.SUBPRIV.VCNDEV.ORACLEVCN.COM"
-        - name: ORACLE_ENCODING
-          value: "UTF-8"
-        - name: ORACLE_PORT
-          value: "1521"
+        - name: ORACLE_CONNECTION_STRING
+          value: "corrwin/5VUn2yD5@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=172.30.10.227)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=OPDBDEV.SUBPRIV.VCNDEV.ORACLEVCN.COM)))"
         - name: LD_LIBRARY_PATH
           value: "/opt/instantclient"
   version: 3
