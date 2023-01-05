@@ -6,9 +6,9 @@ import cx_Oracle
 from etria_logger import Gladsheim
 
 # SOURCE CODE
-from src.core.interfaces.repository.oracle.interface import IOracle
-from src.domain.exceptions.model import InternalServerError
-from src.infrastructure.oracle.infrastructure import OracleInfrastructure
+from func.src.core.interfaces.repository.oracle.interface import IOracle
+from func.src.domain.exceptions.model import InternalServerError
+from func.src.infrastructure.oracle.infrastructure import OracleInfrastructure
 
 
 class OracleBaseRepository(IOracle):

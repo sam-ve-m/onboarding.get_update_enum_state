@@ -1,5 +1,4 @@
-echo "DEPLOYING FISSION FUNCTION..."
-source set_variables.sh
-echo "RODANDO ARQUIVO configure.sh"; bash configure.sh || { echo "ERROR: Error while running configure.sh [EXITING SCRIPT]"; exit; }
-echo "RODANDO ARQUIVO run.sh"; bash run.sh || { echo "ERROR: Error while running run.sh [EXITING SCRIPT]"; exit; }
-echo "FISSION DEPLOYED SUCCESSFULLY!"
+fission spec init
+fission env create --spec --name onb-br-enum-state-env --image nexus.sigame.com.br/fission-onboarding-br-enum-state:0.1.0 --poolsize 0 --version 3 --imagepullsecret "nexus-v3" --spec
+fission fn create --spec --name onb-br-enum-state-fn --env onb-br-enum-state-env --code fission.py --targetcpu 80 --executortype newdeploy --maxscale 3 --requestsperpod 10000 --spec
+fission route create --spec --name onb-br-enum-state-rt --method GET --url /enum/state --function onb-br-enum-state-fn

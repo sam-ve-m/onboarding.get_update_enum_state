@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from src.domain.validators.state.validator import StateParams
+from func.src.domain.validators.state.validator import StateParams
 
 
 class IStateEnumService(ABC):

@@ -1,6 +1,6 @@
 import cx_Oracle
 
-from src.infrastructure.env_config import Configuration
+from func.src.infrastructure.env_config import Configuration
 
 
 class OracleInfrastructure:
