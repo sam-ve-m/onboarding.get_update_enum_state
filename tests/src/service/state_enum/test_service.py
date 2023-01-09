@@ -2,9 +2,9 @@ from unittest.mock import patch
 
 import pytest
 
-from src.domain.validators.state.validator import StateParams
-from src.repository.state_enum.repository import StateEnumRepository
-from src.service.state_enum.service import StateEnumService
+from func.src.domain.validators.state.validator import StateParams
+from func.src.repository.state_enum.repository import StateEnumRepository
+from func.src.service.state_enum.service import StateEnumService
 from tests.test_doubles.doubles import (
     enum_service_get_enums_response_ok,
     enum_service_get_enums_response_none,

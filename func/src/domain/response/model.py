@@ -2,7 +2,7 @@ from json import dumps
 
 from flask import Response
 
-from src.domain.response.status_code.enums import StatusCode
+from func.src.domain.response.status_code.enums import StatusCode
 
 
 class ResponseModel:

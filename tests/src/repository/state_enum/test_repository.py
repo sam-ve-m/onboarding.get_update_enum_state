@@ -1,8 +1,8 @@
 from unittest.mock import patch
 
-from src.repository.base_repository.oracle.repository import OracleBaseRepository
-from src.repository.enum_state_cache.repository import EnumStateCacheRepository
-from src.repository.state_enum.repository import StateEnumRepository
+from func.src.repository.base_repository.oracle.repository import OracleBaseRepository
+from func.src.repository.enum_state_cache.repository import EnumStateCacheRepository
+from func.src.repository.state_enum.repository import StateEnumRepository
 from tests.test_doubles.doubles import (
     enum_repository_get_cached_enum_dummy,
     enum_repository_get_from_cache_dummy_none,
