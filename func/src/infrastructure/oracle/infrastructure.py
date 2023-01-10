@@ -12,13 +12,8 @@ class OracleInfrastructure:
     @classmethod
     def _make_connection(cls) -> cx_Oracle.Connection:
         connection = cx_Oracle.connect(
+            dsn=Configuration.config("ORACLE_CONNECTION_STRING"),
             user=Configuration.config("ORACLE_USER"),
-            password=Configuration.config("ORACLE_PASSWORD"),
-            dsn=cx_Oracle.makedsn(
-                Configuration.config("ORACLE_BASE_DSN"),
-                Configuration.config("ORACLE_PORT"),
-                service_name=Configuration.config("ORACLE_SERVICE"),
-            ),
-            encoding=Configuration.config("ORACLE_ENCODING"),
+            password=Configuration.config("ORACLE_PASSWORD")
         )
         return connection
